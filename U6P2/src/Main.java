@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.math.BigInteger;
 
 public class Main {
     public static void main(String[] args) {
@@ -11,7 +12,14 @@ public class Main {
         for (int i = 1; i <= n; i++) {
             numS.append(i);
         }
-        System.out.println(numS.toString());
+        BigInteger num = BigInteger.valueOf(Long.parseLong(numS.toString()));
+        BigInteger numMod = BigInteger.valueOf(3);
+        System.out.println(numS);
+        if (num.mod(numMod).equals(BigInteger.ZERO)){
+            System.out.println("Si es divisible por 3");
+        } else {
+            System.out.println("No es divisible por 3");
+        }
     }
 
 
